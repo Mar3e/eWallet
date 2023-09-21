@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './pages/dashboard.dart';
+import './views/dashboard.dart';
 import 'views/login.dart';
 import 'views/signup.dart';
 

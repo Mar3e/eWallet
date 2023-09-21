@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../pages/editProfile.dart';
+import '../views/editProfile.dart';
 import '../Models/dummy_data.dart';
 
 class Profile extends StatefulWidget {
