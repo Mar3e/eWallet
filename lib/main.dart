@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './views/dashboard.dart';
+import 'views/dashboard_view.dart';
 import 'views/login.dart';
 import 'views/signup.dart';
 
@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
-      home: _loggedIn ? Dashboard(logout: logout) : Login(login: login),
+      home: _loggedIn ? DashboardView() : Login(login: login),
     );
   }
 }
