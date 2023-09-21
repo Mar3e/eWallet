@@ -1,16 +1,9 @@
 # ewalletapp
 
-A new Flutter project.
+This project is a side project I use to learn new things in flutter and in coding in general, I will List below what things I'm using what archittcture what packages and other things.
 
-## Getting Started
+## The project architcture
+I'm currently learning to implement the MVVM archittcture it may be over kill for this project but it's a good start for me in learing.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## The packages
+1. The first package I want to learn is **Provider** (to help my understand state managment more).
