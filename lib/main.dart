@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/dashboard.dart';
-import './Pages/login.dart';
-import './Pages/signup.dart';
+import 'views/login.dart';
+import 'views/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
   void login() {
     setState(() {
       _loggedIn = !_loggedIn;
-      print("moew");
     });
   }
 

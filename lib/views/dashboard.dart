@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../Widgets/ewalletDrawer.dart';
 import '../Widgets/moneyButton.dart';
 import '../Widgets/transactionTile.dart';
-import '../Models/dummyData.dart';
+import '../Models/dummy_data.dart';
 
 class Dashboard extends StatefulWidget {
   final VoidCallback logout;

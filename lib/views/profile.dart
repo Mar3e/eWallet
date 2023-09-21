@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/editProfile.dart';
-import '../Models/dummyData.dart';
+import '../Models/dummy_data.dart';
 
 class Profile extends StatefulWidget {
   Profile({Key? key}) : super(key: key);

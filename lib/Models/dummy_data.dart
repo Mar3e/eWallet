@@ -1,13 +1,6 @@
-import './cards.dart';
 import './transaction.dart';
 import './users.dart';
 
-var userCards = <Cards>[
-  Cards("123123123", "مرعي", DateTime(2022, 5), 54652,
-      "assets/images/kibank.png"),
-  Cards("987654321", "مرعي", DateTime(2023, 5), 124365,
-      "assets/images/ki2bank.png")
-];
 
 var userTransactions = <Transaction>[
   Transaction(

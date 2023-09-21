@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Pages/profile.dart';
+import '../views/profile.dart';
 
 class ewalletDrawer extends StatelessWidget {
   Function logout;

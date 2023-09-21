@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Models/dummyData.dart';
+import '../Models/dummy_data.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});

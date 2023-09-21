@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Pages/signup.dart';
+import '../views/signup.dart';
 
 class Login extends StatefulWidget {
   VoidCallback login;
