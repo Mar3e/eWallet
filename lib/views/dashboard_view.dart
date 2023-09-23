@@ -123,34 +123,35 @@ class DashboardView extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(20.0),
-              width: double.infinity,
-              height: screenHeight * 0.2,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: users.length,
-                  itemBuilder: (BuildContext context, index) {
-                    return InkWell(
-                      onTap: () {},
-                      child: Card(
-                        child: SizedBox(
-                          width: 100,
-                          height: 10,
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                users[index].profilePic,
-                                scale: 18,
-                              ),
-                              Text(users[index].userName)
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.all(20.0),
+            //   width: double.infinity,
+            //   height: screenHeight * 0.2,
+            //   child: ListView.builder(
+            //       scrollDirection: Axis.horizontal,
+            //       itemCount: users.length,
+            //       itemBuilder: (BuildContext context, index) {
+            //         return InkWell(
+            //           onTap: () {},
+            //           child: Card(
+            //             child: SizedBox(
+            //               width: 100,
+            //               height: 10,
+            //               child: Column(
+            //                 children: [
+            //                   Image.asset(
+            //                     //TODO fix this
+            //                     users[index].profilePic?? "null",
+            //                     scale: 18,
+            //                   ),
+            //                   Text(users[index].userName)
+            //                 ],
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       }),
+            // ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(

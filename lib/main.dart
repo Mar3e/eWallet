@@ -1,43 +1,40 @@
+import 'package:ewalletapp/repositories/auth_repo/auth_testing.dart';
+import 'package:ewalletapp/views_models/auth_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'views/dashboard_view.dart';
-import 'views/login.dart';
+import 'views/signin_view.dart';
 import 'views/signup.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  var _loggedIn = false;
-
-  void login() {
-    setState(() {
-      _loggedIn = !_loggedIn;
-    });
-  }
-
-  void logout() {
-    setState(() {
-      _loggedIn = !_loggedIn;
-    });
-  }
-
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
+    return Directionality(textDirection: TextDirection.rtl,
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => AuthViewModel(AuthTesting()),)
+        ],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.cyan,
+          ),
+          home:Consumer<AuthViewModel>(builder: (_, value, __) {
+            if(value.isSigned){
+              return const DashboardView();
+            }else{
+              return SignInView();
+            }
+          },),
+        ),
       ),
-      home: _loggedIn ? DashboardView() : Login(login: login),
     );
   }
 }

@@ -1,5 +1,5 @@
 import './transaction.dart';
-import './users.dart';
+import 'user.dart';
 
 
 var userTransactions = <Transaction>[
@@ -17,13 +17,4 @@ var userTransactions = <Transaction>[
       Status.completed),
 ];
 
-var users = <Users>[
-  Users(132, "مرعي بن طالب", "1111", "mar@gmail.com", 773627506,
-      "assets/images/avatar.png"),
-  Users(132, "أحمد باشنيني", "2222", "bash@gmail.com", 789456123,
-      "assets/images/avatar.png"),
-  Users(132, "معاذ مبيروك", "3333", "moath@gmail.com", 321654987,
-      "assets/images/avatar.png"),
-  Users(132, "أحمد قرعة", "4444", "ahmed@gmail.com", 741852963,
-      "assets/images/avatar.png"),
-];
+

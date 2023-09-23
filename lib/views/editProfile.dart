@@ -9,36 +9,36 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  final user = users[0];
+  
 
   late TextEditingController _nameController;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
 
-  @override
-  void initState() {
-    super.initState();
-    _nameController = TextEditingController(text: user.userName);
-    _emailController = TextEditingController(text: user.userEmail);
-    _phoneController = TextEditingController(text: user.userPhone.toString());
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _nameController = TextEditingController(text: user.userName);
+  //   _emailController = TextEditingController(text: user.userEmail);
+  //   _phoneController = TextEditingController(text: user.userPhone.toString());
+  // }
 
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    _phoneController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _nameController.dispose();
+  //   _emailController.dispose();
+  //   _phoneController.dispose();
+  //   super.dispose();
+  // }
 
-  void _saveChanges() {
-    setState(() {
-      user.userName = _nameController.text;
-      user.userEmail = _emailController.text;
-      user.userPhone = int.parse(_phoneController.text);
-      Navigator.pop(context);
-    });
-  }
+  // void _saveChanges() {
+  //   setState(() {
+  //     user.userName = _nameController.text;
+  //     user.userEmail = _emailController.text;
+  //     user.userPhone = int.parse(_phoneController.text);
+  //     Navigator.pop(context);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +51,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           actions: [
-            IconButton(
-              icon: const Icon(Icons.save),
-              onPressed: _saveChanges,
-            ),
+            // IconButton(
+            //   icon: const Icon(Icons.save),
+            //   onPressed: _saveChanges,
+            // ),
           ],
         ),
         body: Padding(
