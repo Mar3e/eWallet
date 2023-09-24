@@ -2,9 +2,9 @@ import 'package:ewalletapp/repositories/auth_repo/auth_testing.dart';
 import 'package:ewalletapp/views_models/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'views/dashboard_view.dart';
-import 'views/signin_view.dart';
-import 'views/signup.dart';
+import 'Views/dashboard_view.dart';
+import 'Views/signin_view.dart';
+import 'Views/signup.dart';
 
 void main() {
   runApp(const MyApp());

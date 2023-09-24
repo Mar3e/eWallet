@@ -3,9 +3,9 @@ import 'package:ewalletapp/repositories/auth_repo/auth_repository.dart';
 
 class AuthTesting extends AuthRepository {
   @override
-  Future<User?> getUser(String userEmail, String userPassword) async{
+  Future<User?> getUser(String userEmail,String  userPassword) async{
 try {
-   await Future.delayed(const Duration(seconds: 3));
+   await Future.delayed(const Duration(seconds: 1));
   User currentUser = users.firstWhere((element) => element.userEmail == userEmail && element.userPassword == userPassword,);
 return currentUser;
 } catch (e) {
