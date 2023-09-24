@@ -14,8 +14,8 @@ class AuthViewModel extends ChangeNotifier {
   bool _isSigned = false;
   bool _obscureText = true;
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _passWordController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passWordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
   User? get currentUser => _currentUser;
   bool get isSigned => _isSigned;
@@ -40,14 +40,14 @@ class AuthViewModel extends ChangeNotifier {
           notifyListeners();
           return true; // Sign-in successful
         } else {
-          print("no user found"); // User not found
+          debugPrint("no user found"); // User not found
           return false;
         }
       } else {
         return true;
       }
     } catch (e) {
-      print('Sign-in error: $e');
+      debugPrint('Sign-in error: $e');
       return false; // Sign-in failed
     }
   }
@@ -63,7 +63,7 @@ class AuthViewModel extends ChangeNotifier {
       notifyListeners();
       return true; // Sign-up successful
     } catch (e) {
-      print('Sign-up error: $e');
+      debugPrint('Sign-up error: $e');
       return false; // Sign-up failed
     }
   }
