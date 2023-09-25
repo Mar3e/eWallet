@@ -13,16 +13,22 @@ class AuthViewModel extends ChangeNotifier {
   User? _currentUser;
   bool _isSigned = false;
   bool _obscureText = true;
-  final _formKey = GlobalKey<FormState>();
+  final _signInFormKey = GlobalKey<FormState>();
+  final _signUpFormKey = GlobalKey<FormState>();
   final TextEditingController _passWordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
 
   User? get currentUser => _currentUser;
   bool get isSigned => _isSigned;
   bool get obscureText => _obscureText;
-  get formKey => _formKey;
+  get signInFormKey => _signInFormKey;
+  get signUpFormKey => _signUpFormKey;
   get passWordController => _passWordController;
   get emailController => _emailController;
+  get phoneController => _phoneController;
+  get nameController => _nameController;
 
   void toggleObscureText() {
     _obscureText = !_obscureText;
@@ -31,12 +37,13 @@ class AuthViewModel extends ChangeNotifier {
 
   Future<bool> signIn() async {
     try {
-      if (formValidator()) {
+      if (signInFormValidator()) {
         final user = await _authRepository.getUser(
             _emailController.text, _passWordController.text);
         if (user != null) {
           _currentUser = user;
           _isSigned = true;
+          print(_currentUser!.userName);
           notifyListeners();
           return true; // Sign-in successful
         } else {
@@ -52,16 +59,28 @@ class AuthViewModel extends ChangeNotifier {
     }
   }
 
-  Future<bool> signUp(String userName, String userEmail, int userPhone,
-      String userPassword) async {
+  Future<bool> signUp() async {
     try {
-      final newUser = await _authRepository.addUser(
-          userName, userEmail, userPhone, userPassword);
+      if (signUpFormValidator()) {
+        final newUser = await _authRepository.addUser(
+            _nameController.text,
+            _emailController.text,
+            int.parse(_phoneController.text),
+            _passWordController.text);
+        if (newUser != null) {
+          _currentUser = newUser;
+          _isSigned = true;
+          print(_currentUser!.userName);
+          notifyListeners();
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
 
-      _currentUser = newUser;
-      _isSigned = true;
-      notifyListeners();
-      return true; // Sign-up successful
+      // Sign-up successful
     } catch (e) {
       debugPrint('Sign-up error: $e');
       return false; // Sign-up failed
@@ -78,9 +97,16 @@ class AuthViewModel extends ChangeNotifier {
 
   String? emailValidator() => validateEmail(_emailController.text);
   String? passWordValidator() => notEmpty(_passWordController.text);
+  String? userNameValidator() => notEmpty(_nameController.text);
+  String? phoneValidator() => validatePhone(_phoneController.text);
 
-  bool formValidator() {
-    bool isValid = _formKey.currentState!.validate();
+  bool signInFormValidator() {
+    bool isValid = _signInFormKey.currentState!.validate();
+    return isValid;
+  }
+
+  bool signUpFormValidator() {
+    bool isValid = _signUpFormKey.currentState!.validate();
     return isValid;
   }
 }
