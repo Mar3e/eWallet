@@ -26,13 +26,14 @@ class AuthTesting extends AuthRepository {
   Future<User?> addUser(String userName, String userEmail, int userPhone,
       String userPassword) async {
     try {
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       users.add(User(
           userId: users.length,
           userName: userName,
           userPassword: userPassword,
           userEmail: userEmail,
           userPhone: userPhone));
+
       return users.last;
     } catch (e) {
       return null;
