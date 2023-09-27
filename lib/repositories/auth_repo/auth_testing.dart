@@ -1,22 +1,18 @@
 import 'package:ewalletapp/Models/user.dart';
 import 'package:ewalletapp/repositories/auth_repo/auth_repository.dart';
-import 'package:flutter/material.dart';
 
 class AuthTesting extends AuthRepository {
   @override
   Future<User?> getUser(String userEmail, String userPassword) async {
     try {
-      //todo delete this after testing
-      for (var user in users) {
-        debugPrint(user.userName);
-      }
       await Future.delayed(const Duration(seconds: 1));
-      User currentUser = users.firstWhere(
+      User user = users.firstWhere(
         (element) =>
             element.userEmail == userEmail &&
             element.userPassword == userPassword,
       );
-      return currentUser;
+
+      return user;
     } catch (e) {
       return null;
     }

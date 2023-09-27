@@ -10,7 +10,6 @@ class AuthViewModel extends ChangeNotifier {
 
   AuthViewModel(this._authRepository);
 
-  User? _currentUser;
   bool _isSigned = false;
   bool _obscureText = true;
   final _signInFormKey = GlobalKey<FormState>();
@@ -20,7 +19,6 @@ class AuthViewModel extends ChangeNotifier {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
 
-  User? get currentUser => _currentUser;
   bool get isSigned => _isSigned;
   bool get obscureText => _obscureText;
   get signInFormKey => _signInFormKey;
@@ -35,62 +33,8 @@ class AuthViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> signIn() async {
-    try {
-      if (signInFormValidator()) {
-        final user = await _authRepository.getUser(
-            _emailController.text, _passWordController.text);
-        if (user != null) {
-          _currentUser = user;
-          _isSigned = true;
-          print(_currentUser!.userName);
-          notifyListeners();
-          return true; // Sign-in successful
-        } else {
-          debugPrint("no user found"); // User not found
-          return false;
-        }
-      } else {
-        return true;
-      }
-    } catch (e) {
-      debugPrint('Sign-in error: $e');
-      return false; // Sign-in failed
-    }
-  }
-
-  Future<bool> signUp() async {
-    try {
-      if (signUpFormValidator()) {
-        final newUser = await _authRepository.addUser(
-            _nameController.text,
-            _emailController.text,
-            int.parse(_phoneController.text),
-            _passWordController.text);
-        if (newUser != null) {
-          _currentUser = newUser;
-          _isSigned = true;
-          print(_currentUser!.userName);
-          notifyListeners();
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-
-      // Sign-up successful
-    } catch (e) {
-      debugPrint('Sign-up error: $e');
-      return false; // Sign-up failed
-    }
-  }
-
-  void signOut() {
-    _currentUser = null;
-    _isSigned = false;
-    notifyListeners();
+  void toggleSignIn(bool value) {
+    _isSigned = value;
   }
 
   //validators

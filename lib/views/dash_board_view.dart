@@ -1,5 +1,6 @@
 import 'package:ewalletapp/Utilities/sizes_config.dart';
 import 'package:ewalletapp/Views_Models/auth_view_model.dart';
+import 'package:ewalletapp/Views_Models/dash_board_View_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../widgets/ewalletDrawer.dart';
@@ -7,13 +8,13 @@ import '../widgets/moneyButton.dart';
 import '../widgets/transactionTile.dart';
 import '../Models/dummy_data.dart';
 
-class DashboardView extends StatelessWidget {
-  const DashboardView({Key? key}) : super(key: key);
+class DashBoardView extends StatelessWidget {
+  const DashBoardView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Consumer<AuthViewModel>(
+      child: Consumer<DashBoardViewModel>(
         builder: (context, value, child) => Scaffold(
           //TODO: add a new way to display the drawer
           // drawer: ewalletDrawer(
@@ -36,7 +37,7 @@ class DashboardView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          InkWell(
+                          const InkWell(
                             //!  onTap: _openDrawer,
                             child: CircleAvatar(
                               backgroundImage:
@@ -47,7 +48,7 @@ class DashboardView extends StatelessWidget {
                             width: 10.0,
                           ),
                           Text(
-                            value.currentUser!.userName,
+                            "mm",
                             style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
@@ -162,10 +163,7 @@ class DashboardView extends StatelessWidget {
                     }),
               ),
               ElevatedButton(
-                  onPressed: () =>
-                      Provider.of<AuthViewModel>(context, listen: false)
-                          .signOut(),
-                  child: const Text('تسجيل الخروج'))
+                  onPressed: () {}, child: const Text('تسجيل الخروج'))
             ],
           ),
         ),
