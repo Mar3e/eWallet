@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../views/editProfile.dart';
-import '../Models/dummy_data.dart';
+
+import './editProfile.dart';
 
 class ProfileView extends StatelessWidget {
   ProfileView({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +38,8 @@ class ProfileView extends StatelessWidget {
                     );
                   },
                   child: const Text("تعديل الحساب",
-                      style: TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold)),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 ),
               ],
             ),
@@ -58,9 +57,9 @@ class ProfileView extends StatelessWidget {
             const Card(
               child: Text(
                 "test",
+
                 ///! user.userName,
-                style: TextStyle(
-                    fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 16),
@@ -72,10 +71,10 @@ class ProfileView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Card(
-              child: Text("test",
+              child: Text(
+                "test",
                 //! user.userEmail,
-                style: TextStyle(
-                    fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 16),
@@ -87,10 +86,10 @@ class ProfileView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Card(
-              child: Text("test",
+              child: Text(
+                "test",
                 //! user.userPhone.toString(),
-                style: TextStyle(
-                    fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
           ],

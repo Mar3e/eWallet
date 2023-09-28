@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Models/dummy_data.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -9,8 +8,6 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  
-
   late TextEditingController _nameController;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;

@@ -1,6 +1,4 @@
 import './transaction.dart';
-import 'user.dart';
-
 
 var userTransactions = <Transaction>[
   Transaction(
@@ -16,5 +14,3 @@ var userTransactions = <Transaction>[
   Transaction("مرعي بن طالب", "أحمد باشنيني", 15000.0, DateTime(2022, 1, 3),
       Status.completed),
 ];
-
-
