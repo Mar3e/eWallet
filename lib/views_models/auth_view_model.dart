@@ -39,7 +39,7 @@ class AuthViewModel extends ChangeNotifier {
       user = await _authRepository.getUser(
           emailController.text, passWordController.text);
       _isSigned = true;
-
+      _currentUser = user;
       notifyListeners();
       return false;
     } else {
