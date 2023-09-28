@@ -1,9 +1,6 @@
-import 'package:ewalletapp/Utilities/sizes_config.dart';
-import 'package:ewalletapp/Views_Models/auth_view_model.dart';
-import 'package:ewalletapp/Views_Models/dash_board_View_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widgets/ewalletDrawer.dart';
+import '../views_models/auth_view_model.dart';
 import '../widgets/moneyButton.dart';
 import '../widgets/transactionTile.dart';
 import '../Models/dummy_data.dart';
@@ -14,7 +11,7 @@ class DashBoardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Consumer<DashBoardViewModel>(
+      child: Consumer<AuthViewModel>(
         builder: (context, value, child) => Scaffold(
           //TODO: add a new way to display the drawer
           // drawer: ewalletDrawer(
@@ -48,7 +45,7 @@ class DashBoardView extends StatelessWidget {
                             width: 10.0,
                           ),
                           Text(
-                            "mm",
+                            value.name,
                             style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,

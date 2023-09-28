@@ -1,8 +1,7 @@
-import 'package:ewalletapp/views_models/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Widgets/alert_dialog.dart';
+import '../Views_Models/auth_view_model.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -77,26 +76,26 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     const SizedBox(height: 16.0),
-                    ElevatedButton(
-                      child: const Text(
-                        'أنشاء الحساب',
-                        style: TextStyle(
-                            fontSize: 22.0, fontWeight: FontWeight.bold),
-                      ),
-                      onPressed: () => authViewModel.signUp().then(
-                        (value) {
-                          if (!value) {
-                            ShowAlertDialog().showAlert(
-                                context: context,
-                                title: "حدث خطأ ما",
-                                content:
-                                    "لم يتم العثور على المستخدم تأكد من إدخال البيانات بشكل صحيح");
-                          } else {
-                            Navigator.pop(context);
-                          }
-                        },
-                      ),
-                    ),
+                    // ElevatedButton(
+                    //   child: const Text(
+                    //     'أنشاء الحساب',
+                    //     style: TextStyle(
+                    //         fontSize: 22.0, fontWeight: FontWeight.bold),
+                    //   ),
+                    //   onPressed: () => authViewModel.signUp().then(
+                    //     (value) {
+                    //       if (!value) {
+                    //         ShowAlertDialog().showAlert(
+                    //             context: context,
+                    //             title: "حدث خطأ ما",
+                    //             content:
+                    //                 "لم يتم العثور على المستخدم تأكد من إدخال البيانات بشكل صحيح");
+                    //       } else {
+                    //         Navigator.pop(context);
+                    //       }
+                    //     },
+                    //   ),
+                    // ),
                     const SizedBox(height: 40.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

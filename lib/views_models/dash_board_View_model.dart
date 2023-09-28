@@ -7,4 +7,6 @@ class DashBoardViewModel extends ChangeNotifier {
   final AuthRepository _authRepository;
 
   DashBoardViewModel(this._authRepository);
+
+  get name => "moew";
 }

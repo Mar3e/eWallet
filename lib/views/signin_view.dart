@@ -22,8 +22,8 @@ class SignInView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Text(
-                      "مرحباً",
+                    Text(
+                      authViewModel.name,
                       style:
                           TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                     ),
@@ -78,25 +78,25 @@ class SignInView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16.0),
-                    ElevatedButton(
-                      onPressed: () => authViewModel.signIn().then((value) {
-                        if (!value) {
-                          ShowAlertDialog().showAlert(
-                              context: context,
-                              title: "حدث خطأ ما",
-                              content:
-                                  "لم يتم العثور على المستخدم تأكد من إدخال البيانات بشكل صحيح");
-                        }
-                      }),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'تسجيل الدخول',
-                          style: TextStyle(
-                              fontSize: 22.0, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
+                    // ElevatedButton(
+                    //   onPressed: () => authViewModel.signIn().then((value) {
+                    //     if (!value) {
+                    //       ShowAlertDialog().showAlert(
+                    //           context: context,
+                    //           title: "حدث خطأ ما",
+                    //           content:
+                    //               "لم يتم العثور على المستخدم تأكد من إدخال البيانات بشكل صحيح");
+                    //     }
+                    //   }),
+                    //   child: const Padding(
+                    //     padding: EdgeInsets.all(8.0),
+                    //     child: Text(
+                    //       'تسجيل الدخول',
+                    //       style: TextStyle(
+                    //           fontSize: 22.0, fontWeight: FontWeight.bold),
+                    //     ),
+                    //   ),
+                    // ),
                     const SizedBox(
                       height: 30.0,
                     ),

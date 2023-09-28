@@ -27,15 +27,18 @@ class AuthViewModel extends ChangeNotifier {
   get emailController => _emailController;
   get phoneController => _phoneController;
   get nameController => _nameController;
+  get name => "moew";
 
   void toggleObscureText() {
     _obscureText = !_obscureText;
     notifyListeners();
   }
 
-  void toggleSignIn(bool value) {
-    _isSigned = value;
-  }
+  // Future<bool> signIn() async {
+  //   if (signInFormValidator()) {
+  //     _authRepository.getUser(emailController, passWordController);
+  //   }
+  // }
 
   //validators
 
