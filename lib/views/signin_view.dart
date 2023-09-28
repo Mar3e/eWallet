@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Utilities/navigators.dart';
+import '../Core/Utilities/navigators.dart';
 import '../Widgets/alert_dialog.dart';
 import '../views_models/auth_view_model.dart';
 

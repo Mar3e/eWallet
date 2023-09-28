@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../Models/user.dart';
-import '../Utilities/validators.dart';
+import '../Core/Utilities/validators.dart';
 import '../repositories/auth_repo/auth_repository.dart';
 
 class AuthViewModel extends ChangeNotifier {
@@ -39,7 +39,7 @@ class AuthViewModel extends ChangeNotifier {
       user = await _authRepository.getUser(
           emailController.text, passWordController.text);
       _isSigned = true;
-      _currentUser = user;
+
       notifyListeners();
       return false;
     } else {
