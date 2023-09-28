@@ -1,15 +1,15 @@
-import 'package:ewalletapp/Models/user.dart';
-import 'package:ewalletapp/repositories/auth_repo/auth_repository.dart';
+// This view model are used for the both of signIn and signUp views for simplicity
 import 'package:flutter/material.dart';
 
+import '../Models/user.dart';
 import '../Utilities/validators.dart';
+import '../repositories/auth_repo/auth_repository.dart';
 
-// This view model are used for the both of signIn and signUp views for simplicity
 class AuthViewModel extends ChangeNotifier {
   final AuthRepository _authRepository;
 
   AuthViewModel(this._authRepository);
-
+  User? _currentUser;
   bool _isSigned = false;
   bool _obscureText = true;
   final _signInFormKey = GlobalKey<FormState>();
@@ -18,7 +18,7 @@ class AuthViewModel extends ChangeNotifier {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
-
+  get currentUser => _currentUser;
   bool get isSigned => _isSigned;
   bool get obscureText => _obscureText;
   get signInFormKey => _signInFormKey;
@@ -27,7 +27,6 @@ class AuthViewModel extends ChangeNotifier {
   get emailController => _emailController;
   get phoneController => _phoneController;
   get nameController => _nameController;
-  get name => "moew";
 
   void toggleObscureText() {
     _obscureText = !_obscureText;
@@ -35,11 +34,27 @@ class AuthViewModel extends ChangeNotifier {
   }
 
   Future<bool> signIn() async {
+    User user;
     if (signInFormValidator()) {
-      await _authRepository.getUser(emailController, passWordController);
+      user = await _authRepository.getUser(
+          emailController.text, passWordController.text);
+      _isSigned = true;
+      _currentUser = user;
+      notifyListeners();
+      return false;
+    } else {
       return true;
     }
-    return false;
+  }
+
+  void signOut() {
+    _currentUser = null;
+    _nameController.clear();
+    _phoneController.clear();
+    _emailController.clear();
+    _passWordController.clear();
+    _isSigned = false;
+    notifyListeners();
   }
 
   //validators

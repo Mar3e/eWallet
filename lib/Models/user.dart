@@ -5,6 +5,7 @@ class User {
   String userEmail;
   int userPhone;
   String? profilePic;
+  Map<String, dynamic>? wallets;
 
   User(
       {required this.userId,
@@ -12,5 +13,6 @@ class User {
       required this.userPassword,
       required this.userEmail,
       required this.userPhone,
+      this.wallets,
       this.profilePic});
 }

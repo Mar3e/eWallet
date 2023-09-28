@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../views_models/auth_view_model.dart';
-import '../widgets/moneyButton.dart';
-import '../widgets/transactionTile.dart';
+
 import '../Models/dummy_data.dart';
+import '../Widgets/moneyButton.dart';
+import '../Widgets/transactionTile.dart';
+import '../views_models/auth_view_model.dart';
 
 class DashBoardView extends StatelessWidget {
   const DashBoardView({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class DashBoardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Consumer<AuthViewModel>(
-        builder: (context, value, child) => Scaffold(
+        builder: (_, authViewModel, __) => Scaffold(
           //TODO: add a new way to display the drawer
           // drawer: ewalletDrawer(
           //   logout: logout,
@@ -34,18 +35,18 @@ class DashBoardView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const InkWell(
+                          InkWell(
                             //!  onTap: _openDrawer,
                             child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage("assets/images/avatar.png"),
+                              backgroundImage: AssetImage(
+                                  authViewModel.currentUser.profilePic),
                             ),
                           ),
                           SizedBox(
                             width: 10.0,
                           ),
                           Text(
-                            value.name,
+                            authViewModel.currentUser.userName,
                             style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
@@ -65,8 +66,8 @@ class DashBoardView extends StatelessWidget {
                     const SizedBox(
                       height: 5.0,
                     ),
-                    const Text(
-                      '\$1,234.56',
+                    Text(
+                      authViewModel.currentUser.wallets["يمني"].toString(),
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -160,7 +161,8 @@ class DashBoardView extends StatelessWidget {
                     }),
               ),
               ElevatedButton(
-                  onPressed: () {}, child: const Text('تسجيل الخروج'))
+                  onPressed: () => authViewModel.signOut(),
+                  child: const Text('تسجيل الخروج'))
             ],
           ),
         ),
