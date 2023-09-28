@@ -36,7 +36,10 @@ class MyApp extends StatelessWidget {
           ),
           home: Directionality(
             textDirection: TextDirection.rtl,
-            child: DashBoardView(),
+            child: Consumer<AuthViewModel>(
+              builder: (context, value, child) =>
+                  value.isSigned ? const DashBoardView() : const SignInView(),
+            ),
           ),
         ),
       ),

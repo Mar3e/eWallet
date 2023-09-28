@@ -34,11 +34,13 @@ class AuthViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Future<bool> signIn() async {
-  //   if (signInFormValidator()) {
-  //     _authRepository.getUser(emailController, passWordController);
-  //   }
-  // }
+  Future<bool> signIn() async {
+    if (signInFormValidator()) {
+      await _authRepository.getUser(emailController, passWordController);
+      return true;
+    }
+    return false;
+  }
 
   //validators
 
