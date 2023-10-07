@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../Models/user.dart';
-import '../repositories/auth_repository.dart';
-
 class DashBoardViewModel extends ChangeNotifier {
-  final AuthRepository _authRepository;
+  DashBoardViewModel();
 
-  DashBoardViewModel(this._authRepository);
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  get name => "moew";
+  get scaffoldKey => _scaffoldKey;
+
+  void openDrawer() {
+    _scaffoldKey.currentState?.openDrawer();
+  }
 }

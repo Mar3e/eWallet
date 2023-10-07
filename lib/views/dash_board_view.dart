@@ -1,9 +1,13 @@
+import 'dart:ffi';
+
+import 'package:ewalletapp/views/Widgets/drawer_widget.dart';
+import 'package:ewalletapp/views_models/dash_board_View_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Models/dummy_data.dart';
-import '../Widgets/moneyButton.dart';
-import '../Widgets/transactionTile.dart';
+import 'Widgets/moneyButton.dart';
+import 'Widgets/transactionTile.dart';
 import '../views_models/auth_view_model.dart';
 
 class DashBoardView extends StatelessWidget {
@@ -12,12 +16,21 @@ class DashBoardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Consumer<AuthViewModel>(
-        builder: (_, authViewModel, __) => Scaffold(
-          //TODO: add a new way to display the drawer
-          // drawer: ewalletDrawer(
-          //   logout: logout,
-          // ),
+      child: Consumer2<AuthViewModel, DashBoardViewModel>(
+        builder: (_, authViewModel, dashBoardViewModel, __) => Scaffold(
+          key: dashBoardViewModel.scaffoldKey,
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            elevation: 0,
+            leading: InkWell(
+              onTap: dashBoardViewModel.openDrawer,
+              child: CircleAvatar(
+                backgroundImage:
+                    AssetImage(authViewModel.currentUser.profilePic),
+              ),
+            ),
+          ),
+          drawer: const DrawerWidget(),
           body: Column(
             children: [
               Container(
@@ -35,13 +48,6 @@ class DashBoardView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          InkWell(
-                            //!  onTap: _openDrawer,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage(
-                                  authViewModel.currentUser.profilePic),
-                            ),
-                          ),
                           SizedBox(
                             width: 10.0,
                           ),

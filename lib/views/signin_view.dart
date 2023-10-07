@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Core/Utilities/navigators.dart';
-import '../Widgets/alert_dialog.dart';
+import 'Widgets/alert_dialog.dart';
 import '../views_models/auth_view_model.dart';
 
 class SignInView extends StatelessWidget {
@@ -22,7 +22,7 @@ class SignInView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text(
+                    const Text(
                       "مرحباً",
                       style:
                           TextStyle(fontSize: 48, fontWeight: FontWeight.bold),

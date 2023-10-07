@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './editProfile.dart';
 
 class ProfileView extends StatelessWidget {
-  ProfileView({Key? key}) : super(key: key);
+  const ProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

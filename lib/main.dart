@@ -1,3 +1,5 @@
+import 'package:ewalletapp/repositories/auth_repository.dart';
+import 'package:ewalletapp/views_models/dash_board_View_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,12 +17,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Specify form where the data comes form
+    AuthRepository dataRepo = AuthTesting();
     return Directionality(
       textDirection: TextDirection.rtl,
       child: MultiProvider(
         providers: [
           ChangeNotifierProvider(
-            create: (context) => AuthViewModel(AuthTesting()),
+            create: (context) => AuthViewModel(dataRepo),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => DashBoardViewModel(),
           )
         ],
         child: MaterialApp(
