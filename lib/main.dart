@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './repositories/auth_repo/auth_testing.dart';
+import 'repositories/auth_testing.dart';
 import './views_models/auth_view_model.dart';
 import './views/dash_board_view.dart';
 import './views/signin_view.dart';

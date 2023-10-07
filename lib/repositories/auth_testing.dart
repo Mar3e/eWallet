@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import '../../Models/user.dart';
-import './auth_repository.dart';
+import '../Models/user.dart';
+import 'auth_repository.dart';
 
 class AuthTesting extends AuthRepository {
   late User _currentUser;

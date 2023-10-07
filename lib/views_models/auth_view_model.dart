@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../Models/user.dart';
 import '../Core/Utilities/validators.dart';
-import '../repositories/auth_repo/auth_repository.dart';
+import '../repositories/auth_repository.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final AuthRepository _authRepository;
