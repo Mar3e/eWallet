@@ -5,7 +5,7 @@ class User {
   String userEmail;
   int userPhone;
   String? profilePic;
-  Map<String, dynamic>? wallets;
+  Map<String, double>? wallets;
 
   User(
       {required this.userId,

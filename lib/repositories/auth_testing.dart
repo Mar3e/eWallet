@@ -44,7 +44,7 @@ class AuthTesting extends AuthRepository {
   }
 }
 
-Map<String, dynamic> usersWallets = {
+Map<String, double> usersWallets = {
   "يمني": 12000.0,
   "دولار": 120.0,
   "سعودي": 300.0

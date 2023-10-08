@@ -2,7 +2,7 @@ import 'package:ewalletapp/Core/Utilities/navigators.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../views_models/auth_view_model.dart';
-import '../../views_models/dash_board_View_model.dart';
+import '../../views_models/dash_board_view_model.dart';
 import '../profile_view.dart';
 
 class DrawerWidget extends StatelessWidget {

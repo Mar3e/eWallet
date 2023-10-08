@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 import 'package:ewalletapp/views/Widgets/drawer_widget.dart';
-import 'package:ewalletapp/views_models/dash_board_View_model.dart';
+import 'package:ewalletapp/views_models/dash_board_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
