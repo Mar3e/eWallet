@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Core/Utilities/navigators.dart';
-import 'Widgets/alert_dialog.dart';
 import '../views_models/auth_view_model.dart';
 
 class SignInView extends StatelessWidget {
@@ -28,9 +27,10 @@ class SignInView extends StatelessWidget {
                           TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                     ),
                     const Text(
-                      "أدخل بريدك الالكتروني لتسجيل الدخول",
+                      "Mareai أدخل بريدك الالكتروني لتسجيل الدخول",
                       style: TextStyle(
                           fontSize: 24,
+                          fontFamily: "DG Modal3at",
                           fontWeight: FontWeight.bold,
                           color: Colors.blueGrey),
                     ),
