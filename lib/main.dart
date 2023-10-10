@@ -1,3 +1,4 @@
+import 'package:ewalletapp/Core/Theme/light_theme.dart';
 import 'package:ewalletapp/repositories/auth_repository.dart';
 import 'package:ewalletapp/views_models/dash_board_view_model.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +33,7 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.cyan,
-          ),
+          theme: getLightThemeData(),
           home: Directionality(
             textDirection: TextDirection.rtl,
             child: Consumer<AuthViewModel>(

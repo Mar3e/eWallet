@@ -27,7 +27,7 @@ class SignInView extends StatelessWidget {
                           TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                     ),
                     const Text(
-                      "Mareai أدخل بريدك الالكتروني لتسجيل الدخول",
+                      "أدخل بريدك الالكتروني لتسجيل الدخول",
                       style: TextStyle(
                           fontSize: 24,
                           fontFamily: "DG Modal3at",
